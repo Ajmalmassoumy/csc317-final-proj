@@ -1,14 +1,30 @@
 extends ../layout
 
-block content 
-    h1 Our Collections
-    ul.product-grid#product-list
-        -for product in products
-            li
-                .product-details
-                    h1 #{product.name}
-                    img.product-image(src='/images/#{product.image}', alt='#{product.name} image')
-                    p #{product.description}
-                    p Price: #{product.price}
-        
-        a.btn.back-to-shop(href='/products') Back to Shop
+block content
+  h1 Featured Products
+  if featuredProducts && featuredProducts.length
+    ul.product-grid
+      each product in featuredProducts
+        li
+          .product-details
+            h2= product.name
+            img.product-image(src='/images/#{product.image}', alt='#{product.name} image')
+            p= product.description
+            p Price: #{product.price}
+            a(href='/products/#{product.id}') View Details
+  else
+    p No featured products available.
+
+  h1 On Sale Now
+  if onSaleProducts && onSaleProducts.length
+    ul.product-grid
+      each product in onSaleProducts
+        li
+          .product-details
+            h2= product.name
+            img.product-image(src='/images/#{product.image}', alt='#{product.name} image')
+            p= product.description
+            p Price: #{product.price}
+            a(href='/products/#{product.id}') View Details
+  else
+    p No products on sale.

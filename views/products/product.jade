@@ -1,9 +1,9 @@
 extends ../layout
 
 block content
-	.product-details
-		h3 #{product.name}
-		img.product-image(src='/images/#{product.image}', alt='#{product.name} image')
-		p #{product.description}
-		p Price: #{product.price}
-		a.btn.back-to-shop(href='/products') Back to Shop
+  .product-details
+    h3= product.name
+    img.product-image(src='/images/#{product.image}', alt='#{product.name} image')
+    p= product.description
+    p Price: #{product.price}
+    a.btn.back-to-shop(href='/products') Back to Shop
