@@ -53,7 +53,6 @@ if (config.debug) {
 }
 
 if (config.production) {
-  console.log('mew mew mew');
   const manifestPath = path.join(__dirname, "public/dist/manifest.json");
 
   if (fs.existsSync(manifestPath)) {
@@ -90,7 +89,7 @@ app.use(cookieParser());
 
 //mount static dir
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/src', express.static(path.join(__dirname, 'src')));
+
 //register all routers
 createRouters(app, db);
 

@@ -11,8 +11,22 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: lonnen/sync-branch-to-glitch-action@v0.0.4
+      - uses: actions/checkout@v2
+      - name: Push to Glitch
         env:
           GLITCH_GIT_URL: ${{ secrets.GLITCH_GIT_URL }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_BRANCH: 'main'
+        run: |
+          GGU=${GLITCH_GIT_URL:?"Missing Glitch Git URL in Environment. Please check your yml file"}
+
+          # Add Glitch as remote
+          git remote add glitch "${GGU}"
+
+          # Unshallow the repo to allow pushing
+          git fetch --unshallow
+
+          # Set up Git config
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          # Force push current HEAD to Glitch's main
+          git push -f glitch HEAD:main
