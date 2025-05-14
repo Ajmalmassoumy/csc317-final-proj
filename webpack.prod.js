@@ -5,6 +5,9 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = merge(common({ production: true }), {
+  output: {
+    path: path.resolve('/app', "public/dist"),
+  },
   mode: "production",
   devtool: false,
   optimization: {

@@ -92,6 +92,54 @@ body.shop-page h2 {
   background-color: rgb(19, 107, 215);
 }
 
+.faq-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.faq-container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #1B3B6F;
+  margin-bottom: 1rem;
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.contact-info a {
+  color: #1B3B6F;
+  text-decoration: underline;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-list li {
+  margin-bottom: 1.8rem;
+}
+
+.faq-list h3 {
+  color: #1B3B6F;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.faq-list p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  
 /* Product Image */
 .product-detail img.product-image {
   display: block;
@@ -192,4 +240,5 @@ body.shop-page h2 {
   border-color: #0077cc;
   box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
   outline: none;
+
 }
