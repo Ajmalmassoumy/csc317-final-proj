@@ -8,7 +8,7 @@ var path = require('path');
 const fs = require("fs");
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var session = require('express-session');
+var session = require('cookie-session');
 var livereload = require('livereload');
 var connectLivereload = require('connect-livereload');
 
