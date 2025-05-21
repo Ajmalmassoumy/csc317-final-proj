@@ -10,64 +10,64 @@ html
       link(rel="stylesheet", href=manifest['main.css'])
       script(src=manifest['main.js'])
     else
-      //- Fallback for development
       link(rel="stylesheet", href='/dist/styles.css')
       script(src='dist/main.js')
   body
-    header
-      block header
-        nav
-          a.logo(href='/')
-            img(src='/images/logo.png', alt='Massoumy Gems logo')
-          ul.menu
-            li.dropdown
-              a(href='/products') Shop
-              .dropdown-content
-                .menu-row
-                  a(href='/products/crystals') Crystals
-                .menu-row
-                  a(href='/products/jewelry') Jewelry
-            li.dropdown
-              a(href='/services') Services
-              .dropdown-content
-                .menu-row
-                  a(href='/services/custom') Gem Cutting
-                .menu-row
-                  a(href='/services/design') Jewelry Design
-            li.dropdown
-              a(href='/learning') Learning
-              .dropdown-content
-                .menu-row
-                  a(href='/learning/education') Gem Education
-                .menu-row
-                  a(href='/learning/healing') Healing Properties
-            li.dropdown
-              a(href='/events') Events
-              .dropdown-content
-                .menu-row
-                  a(href='/events/upcoming') Upcoming Shows
-                .menu-row
-                  a(href='/events/past') Past Events
-            li
-              a(href='/about') About
-            li
-              a(href='/faq') FAQ
-          .actions
-            form.search-form(action="/search/results", method="GET")
-              input.search-bar(type="text", name="q", placeholder="Search products...")
-              button.search-btn(type="submit", aria-label="Search")
-                svg.search-icon(xmlns='http://www.w3.org/2000/svg', fill='none', viewBox='0 0 24 24', stroke-width='1.5', stroke='currentColor')
-                  path(stroke-linecap='round', stroke-linejoin='round', d='m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z')
-            if user && user.email
-              a.signin-btn(href='/users/profile') Profile
-              a.signin-btn(href='/users/logout') Log Out
-            else
-              a.signin-btn(href='/users/login') Sign In
-            a.cart-btn(href='/cart')
-              i.fas.fa-shopping-cart
-    main
-      block content
-    footer
-      block footer
-        .footer-bottom
-          p © 2025 MassoumyGems. All rights reserved.
+    .page-wrapper
+      header
+        block header
+          nav
+            a.logo(href='/')
+              img(src='/images/logo.png', alt='Massoumy Gems logo')
+            ul.menu
+              li.dropdown
+                a(href='/products') Shop
+                .dropdown-content
+                  .menu-row
+                    a(href='/products/crystals') Crystals
+                  .menu-row
+                    a(href='/products/jewelry') Jewelry
+              li.dropdown
+                a(href='/services') Services
+                .dropdown-content
+                  .menu-row
+                    a(href='/services/custom') Gem Cutting
+                  .menu-row
+                    a(href='/services/design') Jewelry Design
+              li.dropdown
+                a(href='/learning') Learning
+                .dropdown-content
+                  .menu-row
+                    a(href='/learning/education') Gem Education
+                  .menu-row
+                    a(href='/learning/healing') Healing Properties
+              li.dropdown
+                a(href='/events') Events
+                .dropdown-content
+                  .menu-row
+                    a(href='/events/upcoming') Upcoming Shows
+                  .menu-row
+                    a(href='/events/past') Past Events
+              li
+                a(href='/about') About
+              li
+                a(href='/faq') FAQ
+            .actions
+              form.search-form(action="/search/results", method="GET")
+                input.search-bar(type="text", name="q", placeholder="Search products...")
+                button.search-btn(type="submit", aria-label="Search")
+                  svg.search-icon(xmlns='http://www.w3.org/2000/svg', fill='none', viewBox='0 0 24 24', stroke-width='1.5', stroke='currentColor')
+                    path(stroke-linecap='round', stroke-linejoin='round', d='m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z')
+              if user && user.email
+                a.signin-btn(href='/users/profile') Profile
+                a.signin-btn(href='/users/logout') Log Out
+              else
+                a.signin-btn(href='/users/login') Sign In
+              a.cart-btn(href='/cart')
+                i.fas.fa-shopping-cart
+      main.main-content
+        block content
+      footer
+        block footer
+          .footer-bottom
+            p © 2025 MassoumyGems. All rights reserved.

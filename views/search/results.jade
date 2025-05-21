@@ -20,7 +20,14 @@ block content
             span $#{product.price.toFixed(2)}
             if product.is_sale
               span.sale-flag On Sale!
-          a(href=`/cart/add/${product.id}`)
+
+          // Add to Cart form
+          form(action='/cart/add', method='POST')
+            input(type='hidden', name='product_id', value=product.id)
+            input(type='hidden', name='product_name', value=product.name)
+            input(type='hidden', name='price_per_unit', value=product.price)
+            input(type='hidden', name='quantity', value='1')
+
             button.add-to-cart-btn Add to Cart
   else
     p No products found.
