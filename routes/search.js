@@ -42,7 +42,7 @@ function createSearchRouter(db) {
           }
 
           res.render('search/results', {
-              title: 'Search Results',
+              title: `Search Results for ${q}`,
               products: rows,
               query: q,
               sort: sort
