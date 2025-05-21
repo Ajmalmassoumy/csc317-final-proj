@@ -12,8 +12,23 @@ a {
 body {
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to top, lightblue, rgb(246, 246, 246)); /* This gradient is kept for body */
+  background: linear-gradient(to top, lightblue, rgb(246, 246, 246));
   margin: 0;
+}
+
+/* Sticky footer layout support */
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
 }
 
 /* Header + Navigation */
@@ -22,10 +37,13 @@ header {
 }
 
 nav {
+  position: sticky;
+  top: 0; /* Ensures it sticks to the top of the viewport */
+  z-index: 1000; /* Ensures it stays above other elements */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, lightblue, rgb(246, 246, 246)); /* Gradient kept here */
+  background: linear-gradient(to right, lightblue, rgb(246, 246, 246));
   border-bottom: 1px solid lightblue;
   padding: 0 2rem;
 }
@@ -83,7 +101,7 @@ nav .profile-btn {
   border: none;
   border-radius: 10px;
   padding: 10px 16px;
-  color: white;
+  color: black;
   font-size: 16px;
   cursor: pointer;
   margin-left: 10px;
@@ -99,7 +117,7 @@ nav .profile-btn:hover {
 
 /* Footer */
 footer {
-  background: linear-gradient(to top, lightblue, rgb(246, 246, 246)); /* This gradient is fine */
+  background: linear-gradient(to top, lightblue, rgb(246, 246, 246));
   text-align: center;
   padding: 20px;
   width: 100%;
@@ -118,8 +136,8 @@ a.back-to-shop {
   margin: 2rem auto;
   text-align: center;
   padding: 10px 20px;
-  background-color:  #1e90ff;
-  color: white;
+  background-color: #1e90ff;
+  color: black;
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
@@ -190,7 +208,7 @@ a.back-to-shop:hover {
 .search-icon {
   width: 20px;
   height: 20px;
-  stroke: white;
+  stroke: black;
 }
 
 /* Responsive Nav */
