@@ -1,0 +1,36 @@
+.faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-list li {
+    margin-bottom: 1.8rem;
+}
+
+.faq-list h3 {
+    color: #1B3B6F;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.faq-list p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.faq-container h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1B3B6F;
+    margin-bottom: 1rem;
+}

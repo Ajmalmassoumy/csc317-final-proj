@@ -10,17 +10,19 @@ a {
 }
 
 body {
-  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to top, lightblue, rgb(246, 246, 246)); /* This gradient is kept for body */
   margin: 0;
 }
 
-/* Header + Navigation */
-header {
-  margin-bottom: 50px;
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem;
+  min-height: calc(100vh - 190px);
 }
 
+/* Header + Navigation */
 nav {
   display: flex;
   justify-content: space-between;
@@ -103,6 +105,7 @@ footer {
   text-align: center;
   padding: 20px;
   width: 100%;
+  bottom: 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 

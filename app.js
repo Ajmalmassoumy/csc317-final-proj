@@ -8,7 +8,7 @@ var path = require('path');
 const fs = require("fs");
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var session = require('express-session');
+var session = require('cookie-session');
 var livereload = require('livereload');
 var connectLivereload = require('connect-livereload');
 
@@ -35,7 +35,11 @@ app.set('view engine', 'jade');
 
 // register logging interface
 if (config.debug) {
-  const liveReloadServer = livereload.createServer();
+  const liveReloadServer = livereload.createServer({
+    exts: ['jade', 'pug', 'js', 'css', 'html'],
+    delay: 500
+  });
+  
   liveReloadServer.watch(path.join(__dirname, 'public'));
 
   // Watch views folder for .jade/.pug changes
