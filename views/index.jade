@@ -1,31 +1,31 @@
 extends layout
 
 block content
-  .homepage
-    h1 Welcome to MassoumyGems
-        br
-        if user && user.email
-          .user-email Welcome, #{user.email}
+  h1 Welcome to MassoumyGems
+      br
+      if user && user.email
+        .user-email Welcome, #{user.email}
 
-    p.tagline Discover handcrafted jewelry, polished stones, crystals, and more.
+  p.tagline Discover handcrafted jewelry, polished stones, crystals, and more.
 
-    h2.section-title Featured Products
-    ul.product-grid
-      - for product in featured_products
-        li.product-item
-          a(href=`/products/${product.id}` aria-label=`View details for ${product.name}`)
-            img(src=`/images/${product.image}`, alt=product.name, onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200';")
-            h3= product.name
-            p= product.description
-            span $#{product.price.toFixed(2)}
+  h2.section-title Featured Products
+  ul.product-grid
+    - for product in featured_products
+      li.product-item
+        a(href=`/products/${product.id}` aria-label=`View details for ${product.name}`)
+          img(src=`/images/${product.image}`, alt=product.name, onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200';")
+          h3= product.name
+          p= product.description
+          span $#{product.price.toFixed(2)}
 
-    h2.section-title Shop Spring Sale
-    ul.product-grid
-      - for product in sale_products
-        li.product-item
-          a(href=`/products/${product.id}` aria-label=`View details for ${product.name}`)
-            img(src=`/images/${product.image}`, alt=product.name, onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200';")
-            h3= product.name
-            p= product.description
-            span $#{product.price.toFixed(2)}
-    a.back-to-shop(href='/products') View All Products
+  h2.section-title Shop Spring Sale
+  ul.product-grid
+    - for product in sale_products
+      li.product-item
+        a(href=`/products/${product.id}` aria-label=`View details for ${product.name}`)
+          img(src=`/images/${product.image}`, alt=product.name, onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200';")
+          h3= product.name
+          p= product.description
+          span $#{product.price.toFixed(2)}
+  
+  a.back-to-shop(href='/products') View All Products
